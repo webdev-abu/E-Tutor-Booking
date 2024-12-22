@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   FaMapMarkerAlt,
   FaPhoneAlt,
@@ -18,44 +19,44 @@ const Footer = () => {
           <h3 className="text-lg font-bold mb-4">Quick Link</h3>
           <ul className="space-y-2">
             <li>
-              <a
-                href="/about"
+              <Link
+                to="/about"
                 className="hover:underline flex items-center gap-2"
               >
                 <span className="text-accent">&gt;</span> About Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="hover:underline flex items-center gap-2"
               >
                 <span className="text-accent">&gt;</span> Contact Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/privacy-policy"
+              <Link
+                to="/privacy-policy"
                 className="hover:underline flex items-center gap-2"
               >
                 <span className="text-accent">&gt;</span> Privacy Policy
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/terms"
+              <Link
+                to="/terms"
                 className="hover:underline flex items-center gap-2"
               >
                 <span className="text-accent">&gt;</span> Terms & Condition
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/faqs"
+              <Link
+                to="/faqs"
                 className="hover:underline flex items-center gap-2"
               >
                 <span className="text-accent">&gt;</span> FAQs & Help
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -75,18 +76,18 @@ const Footer = () => {
             </li>
           </ul>
           <div className="flex gap-4 mt-4">
-            <a href="#" className="hover:text-accent">
+            <Link to="#" className="hover:text-accent">
               <FaFacebook size={20} />
-            </a>
-            <a href="#" className="hover:text-accent">
+            </Link>
+            <Link to="#" className="hover:text-accent">
               <FaTwitter size={20} />
-            </a>
-            <a href="#" className="hover:text-accent">
+            </Link>
+            <Link to="#" className="hover:text-accent">
               <FaYoutube size={20} />
-            </a>
-            <a href="#" className="hover:text-accent">
+            </Link>
+            <Link to="#" className="hover:text-accent">
               <FaLinkedin size={20} />
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -153,18 +154,18 @@ const Footer = () => {
             © Your Site Name, All Rights Reserved. Designed by HTML Codex
           </p>
           <div className="flex gap-4 mt-2 md:mt-0">
-            <a href="/home" className="hover:underline">
+            <Link to="/home" className="hover:underline">
               Home
-            </a>
-            <a href="/cookies" className="hover:underline">
+            </Link>
+            <Link to="/cookies" className="hover:underline">
               Cookies
-            </a>
-            <a href="/help" className="hover:underline">
+            </Link>
+            <Link to="/help" className="hover:underline">
               Help
-            </a>
-            <a href="/faqs" className="hover:underline">
+            </Link>
+            <Link to="/faqs" className="hover:underline">
               FAQs
-            </a>
+            </Link>
           </div>
         </div>
       </div>

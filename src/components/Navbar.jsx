@@ -5,6 +5,62 @@ import { useState } from "react";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const links = (
+    <>
+      <li>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive ? "text-primary" : "text-black"
+          }
+        >
+          HOME
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            isActive ? "text-primary" : "text-black"
+          }
+        >
+          Find tutors
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/courses"
+          className={({ isActive }) =>
+            isActive ? "text-primary" : "text-black"
+          }
+        >
+          Add Tutorials
+        </NavLink>
+      </li>
+
+      <li>
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            isActive ? "text-primary" : "text-black"
+          }
+        >
+          My Tutorials
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            isActive ? "text-primary" : "text-black"
+          }
+        >
+          My booked tutors
+        </NavLink>
+      </li>
+    </>
+  );
+
   return (
     <nav className="navbar bg-base-100 shadow-lg">
       {/* Logo Section */}
@@ -35,49 +91,7 @@ const Navbar = () => {
 
       {/* Desktop Navigation Links */}
       <div className="hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 gap-4">
-          <li>
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive ? "text-primary" : "text-black"
-              }
-            >
-              HOME
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                isActive ? "text-primary" : "text-black"
-              }
-            >
-              ABOUT
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/courses"
-              className={({ isActive }) =>
-                isActive ? "text-primary" : "text-black"
-              }
-            >
-              COURSES
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink
-              to="/contact"
-              className={({ isActive }) =>
-                isActive ? "text-primary" : "text-black"
-              }
-            >
-              CONTACT
-            </NavLink>
-          </li>
-        </ul>
+        <ul className="menu menu-horizontal px-1 gap-4">{links}</ul>
       </div>
 
       {/* Mobile Menu Button */}
@@ -94,70 +108,15 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="absolute top-16 left-0 w-full bg-base-100 shadow-lg z-10 lg:hidden">
           <ul className="menu menu-vertical px-4 py-2 gap-4">
-            <li>
-              <NavLink
-                to="/"
-                className={({ isActive }) =>
-                  isActive ? "text-primary" : "text-black"
-                }
-                onClick={() => setIsMenuOpen(false)}
-              >
-                HOME
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/about"
-                className={({ isActive }) =>
-                  isActive ? "text-primary" : "text-black"
-                }
-                onClick={() => setIsMenuOpen(false)}
-              >
-                ABOUT
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/courses"
-                className={({ isActive }) =>
-                  isActive ? "text-primary" : "text-black"
-                }
-                onClick={() => setIsMenuOpen(false)}
-              >
-                COURSES
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/faq"
-                className={({ isActive }) =>
-                  isActive ? "text-primary" : "text-black"
-                }
-                onClick={() => setIsMenuOpen(false)}
-              >
-                FAQ
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/testimonials"
-                className={({ isActive }) =>
-                  isActive ? "text-primary" : "text-black"
-                }
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Testimonials
-              </NavLink>
-            </li>
+            {links}
             <li>
               <NavLink
                 to="/contact"
                 className={({ isActive }) =>
                   isActive ? "text-primary" : "text-black"
                 }
-                onClick={() => setIsMenuOpen(false)}
               >
-                CONTACT
+                Logout
               </NavLink>
             </li>
           </ul>
