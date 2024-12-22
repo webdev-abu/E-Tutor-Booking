@@ -26,7 +26,19 @@ const Login = () => {
       navigate(from, { replace: true });
     } catch (err) {
       console.log(err);
-      toast.error(err?.message);
+      if (err.code === "Unauthorized") {
+        toast.error("Invalid Email or Password");
+      } else if (
+        err.code === "PERMISSION_DENIED" ||
+        err.code === " permission denied"
+      ) {
+        toast.error("Permission Denied");
+      } else if (err.code === "auth/invalid-credential") {
+        toast.error("Invalid User!");
+        navigate("/registration");
+      } else {
+        toast.error(err?.message);
+      }
     }
   };
 
