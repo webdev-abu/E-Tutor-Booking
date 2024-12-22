@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <footer className="bg-neutral text-white">
       {/* Top Section */}
-      <div className="container mx-auto py-10 px-6 grid lg:grid-cols-4 sm:grid-cols-2 gap-8">
+      <div className="w-11/12 mx-auto py-10 grid lg:grid-cols-4 sm:grid-cols-2 gap-8">
         {/* Quick Links */}
         <div>
           <h3 className="text-lg font-bold mb-4">Quick Link</h3>
