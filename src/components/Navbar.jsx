@@ -13,17 +13,21 @@ const Navbar = () => {
         <NavLink
           to="/"
           className={({ isActive }) =>
-            isActive ? "text-primary" : "text-black"
+            isActive
+              ? "text-primary text-[16px] font-Heebo font-semibold"
+              : "text-black text-[16px] font-Heebo font-semibold"
           }
         >
-          HOME
+          Home
         </NavLink>
       </li>
       <li>
         <NavLink
           to="/about"
           className={({ isActive }) =>
-            isActive ? "text-primary" : "text-black"
+            isActive
+              ? "text-primary text-[16px] font-Heebo font-semibold"
+              : "text-black text-[16px] font-Heebo font-semibold"
           }
         >
           Find tutors
@@ -33,7 +37,9 @@ const Navbar = () => {
         <NavLink
           to="/courses"
           className={({ isActive }) =>
-            isActive ? "text-primary" : "text-black"
+            isActive
+              ? "text-primary text-[16px] font-Heebo font-semibold"
+              : "text-black text-[16px] font-Heebo font-semibold"
           }
         >
           Add Tutorials
@@ -44,7 +50,9 @@ const Navbar = () => {
         <NavLink
           to="/contact"
           className={({ isActive }) =>
-            isActive ? "text-primary" : "text-black"
+            isActive
+              ? "text-primary text-[16px] font-Heebo font-semibold"
+              : "text-black text-[16px] font-Heebo font-semibold"
           }
         >
           My Tutorials
@@ -54,7 +62,9 @@ const Navbar = () => {
         <NavLink
           to="/contact"
           className={({ isActive }) =>
-            isActive ? "text-primary" : "text-black"
+            isActive
+              ? "text-primary text-[16px] font-Heebo font-semibold"
+              : "text-black text-[16px] font-Heebo font-semibold"
           }
         >
           My booked tutors
@@ -64,7 +74,7 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="navbar bg-base-100 shadow-lg">
+    <nav className="navbar bg-base-100 shadow-lg font-Heebo">
       {/* Logo Section */}
       <div className="flex-1">
         <NavLink
@@ -87,7 +97,7 @@ const Navbar = () => {
               />
             </svg>
           </span>
-          eLEARNING
+          eTUTOR
         </NavLink>
       </div>
 
@@ -111,16 +121,49 @@ const Navbar = () => {
         <div className="absolute top-16 left-0 w-full bg-base-100 shadow-lg z-10 lg:hidden">
           <ul className="menu menu-vertical px-4 py-2 gap-4">
             {links}
-            <li>
-              <NavLink
-                to="/contact"
-                className={({ isActive }) =>
-                  isActive ? "text-primary" : "text-black"
-                }
-              >
-                Logout
-              </NavLink>
-            </li>
+            {user ? (
+              <>
+                <li>
+                  <Link className="justify-between my-1 py-2" onClick={logOut}>
+                    Logout
+                  </Link>
+                </li>
+                {/* <div className="dropdown dropdown-end">
+                  <div
+                    tabIndex={0}
+                    role="button"
+                    className="btn btn-ghost btn-circle avatar"
+                  >
+                    <div className="w-10 rounded-full">
+                      <img
+                        alt="Tailwind CSS Navbar component"
+                        src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                      />
+                    </div>
+                  </div>
+                  <ul
+                    tabIndex={0}
+                    className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+                  >
+                    <li>
+                      <Link
+                        className="justify-between my-1 py-2"
+                        onClick={logOut}
+                      >
+                        Logout
+                      </Link>
+                    </li>
+                  </ul>
+                </div> */}
+              </>
+            ) : (
+              <Link to="/login">
+                <button className="btn btn-primary text-white gap-2">
+                  Join Now
+                  <FaArrowRight />
+                </button>
+              </Link>
+            )}
           </ul>
         </div>
       )}
