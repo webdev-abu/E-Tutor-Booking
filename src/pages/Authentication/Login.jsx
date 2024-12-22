@@ -1,8 +1,47 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { FaEnvelope, FaLock } from "react-icons/fa";
 import { AiOutlineGooglePlus } from "react-icons/ai";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
+import toast from "react-hot-toast";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state || "/";
+  console.log(from);
+  const { signIn, signInWithGoogle } = useContext(AuthContext);
+
+  // Email Password Signin
+  const handleSignIn = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const pass = form.password.value;
+    console.log({ email, pass });
+    try {
+      //User Login
+      await signIn(email, pass);
+      toast.success("Signin Successful");
+      navigate(from, { replace: true });
+    } catch (err) {
+      console.log(err);
+      toast.error(err?.message);
+    }
+  };
+
+  // Google Signin
+  const handleGoogleSignIn = async () => {
+    try {
+      await signInWithGoogle();
+
+      toast.success("Signin Successful");
+      navigate(from, { replace: true });
+    } catch (err) {
+      console.log(err);
+      toast.error(err?.message);
+    }
+  };
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="card w-full max-w-md bg-base-100 shadow-xl p-6">
@@ -10,7 +49,7 @@ const Login = () => {
           Login
         </h2>
 
-        <form>
+        <form onSubmit={handleSignIn}>
           {/* Email Field */}
           <div className="form-control mb-4">
             <label className="label">
@@ -22,6 +61,7 @@ const Login = () => {
               </span>
               <input
                 type="email"
+                name="email"
                 placeholder="Enter your email"
                 className="input input-bordered pl-10 w-full"
               />
@@ -39,6 +79,7 @@ const Login = () => {
               </span>
               <input
                 type="password"
+                name="password"
                 placeholder="Enter your password"
                 className="input input-bordered pl-10 w-full"
               />
@@ -60,8 +101,11 @@ const Login = () => {
         </p>
 
         <div className="divider">OR</div>
-        <div className="my-5">
-          <button className="btn btn-primary w-full">
+        <div className="my-2">
+          <button
+            onClick={handleGoogleSignIn}
+            className="btn btn-primary w-full"
+          >
             <AiOutlineGooglePlus className="text-xl" />
             Google
           </button>

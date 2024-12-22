@@ -1,8 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
 import { FaBars, FaTimes, FaArrowRight } from "react-icons/fa";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const links = (
@@ -125,12 +127,46 @@ const Navbar = () => {
 
       {/* Join Now Button */}
       <div className="hidden lg:flex">
-        <Link to="/login">
-          <button className="btn btn-primary text-white gap-2">
-            Join Now
-            <FaArrowRight />
-          </button>
-        </Link>
+        {user ? (
+          <>
+            <div className="dropdown dropdown-end">
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost btn-circle avatar"
+              >
+                <div className="w-10 rounded-full">
+                  <img
+                    alt="Tailwind CSS Navbar component"
+                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                  />
+                </div>
+              </div>
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              >
+                <li>
+                  <Link className="justify-between my-1 py-2">
+                    {user?.displayName}
+                  </Link>
+                </li>
+                <li>
+                  <Link className="justify-between my-1 py-2" onClick={logOut}>
+                    Logout
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </>
+        ) : (
+          <Link to="/login">
+            <button className="btn btn-primary text-white gap-2">
+              Join Now
+              <FaArrowRight />
+            </button>
+          </Link>
+        )}
       </div>
     </nav>
   );
