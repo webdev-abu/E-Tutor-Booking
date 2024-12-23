@@ -41,8 +41,8 @@ const ContactUs = () => {
         {/* Right Section (Form) */}
         <motion.div
           initial="hidden"
-          animate="visible"
-          variants={slideInVariant}
+          whileInView="visible"
+          variants={fadeInVariant}
           className="p-8 bg-white rounded-lg shadow-md"
         >
           <h2 className="text-2xl font-semibold text-primary mb-4">
