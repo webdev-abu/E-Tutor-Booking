@@ -88,17 +88,17 @@ import { motion } from "framer-motion";
 
 const Card = ({ tutor }) => {
   // Animation variants
-  //   const cardVariants = {
-  //     hidden: { opacity: 0, scale: 0.9 },
-  //     visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
-  //   };
+  const fadeInVariant = {
+    hidden: { opacity: 0, y: 300 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  };
   console.log(tutor);
 
   return (
     <motion.div
       initial="hidden"
-      animate="visible"
-      variants={tutor.animation}
+      whileInView="visible"
+      variants={fadeInVariant}
       className="card  bg-white shadow-lg rounded-lg overflow-hidden"
     >
       {/* Header Section */}
