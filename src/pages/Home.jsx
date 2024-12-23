@@ -4,6 +4,7 @@ import Stats from "../components/Stats";
 import Categories from "../components/Categories";
 import PopularTutors from "../components/PopularTutors";
 import ContactUs from "../components/ContactUs";
+import TutorList from "../components/TutorList";
 
 const Home = () => {
   return (
@@ -15,6 +16,10 @@ const Home = () => {
 
       <section className="my-10">
         <Categories />
+      </section>
+
+      <section className="my-10">
+        <TutorList />
       </section>
 
       <section className="my-10">

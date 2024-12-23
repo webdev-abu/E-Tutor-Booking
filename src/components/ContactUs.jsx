@@ -1,46 +1,60 @@
 import React from "react";
+import { motion } from "framer-motion";
+import Lottie from "lottie-react";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import contactAnimation from "../assets/contact-animation.json";
 
 const ContactUs = () => {
+  // Framer Motion Variants
+  const fadeInVariant = {
+    hidden: { opacity: 0, y: 300 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  };
+
+  const slideInVariant = {
+    hidden: { opacity: 0, x: 900 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+  };
+
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10 px-5">
-      <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold text-primary">Contact Us</h1>
-        <p className="mt-2 text-gray-600">
-          We’d love to hear from you! Reach out to us for any inquiries or
-          feedback.
-        </p>
-      </div>
-
-      <div className="grid lg:grid-cols-2 gap-10 w-full max-w-5xl">
-        {/* Contact Details */}
-        <div className="p-6 bg-white rounded-lg shadow-md">
-          <h2 className="text-2xl font-semibold text-primary mb-4">
-            Get in Touch
-          </h2>
-          <div className="space-y-4">
-            <div className="flex items-center">
-              <FaPhoneAlt className="text-primary text-xl mr-4" />
-              <p className="text-gray-700">+123 456 7890</p>
-            </div>
-            <div className="flex items-center">
-              <FaEnvelope className="text-primary text-xl mr-4" />
-              <p className="text-gray-700">support@example.com</p>
-            </div>
-            <div className="flex items-center">
-              <FaMapMarkerAlt className="text-primary text-xl mr-4" />
-              <p className="text-gray-700">123 Main Street, City, Country</p>
-            </div>
+    <div className="min-h-screen bg-gradient-to-r from-blue-50 to-purple-100 flex items-center justify-center py-10 px-5">
+      <div className="grid lg:grid-cols-2 gap-10 w-full max-w-6xl">
+        {/* Left Section (Lottie Animation) */}
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeInVariant}
+          className="flex flex-col justify-center items-center text-center"
+        >
+          <div className="w-full max-w-md">
+            <Lottie animationData={contactAnimation} loop />
           </div>
-        </div>
+          <h1 className="text-4xl font-bold text-primary mt-6">
+            We’d Love to Hear from You!
+          </h1>
+          <p className="text-gray-600 mt-3 max-w-md">
+            Reach out for inquiries, support, or collaboration. Let’s create
+            something amazing together.
+          </p>
+        </motion.div>
 
-        {/* Contact Form */}
-        <div className="p-6 bg-white rounded-lg shadow-md">
+        {/* Right Section (Form) */}
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={slideInVariant}
+          className="p-8 bg-white rounded-lg shadow-md"
+        >
           <h2 className="text-2xl font-semibold text-primary mb-4">
-            Send a Message
+            Contact Us
           </h2>
-          <form className="space-y-4">
-            <div className="form-control">
+          <form className="space-y-6">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              variants={fadeInVariant}
+              className="form-control"
+            >
               <label className="label">
                 <span className="label-text">Your Name</span>
               </label>
@@ -49,8 +63,14 @@ const ContactUs = () => {
                 placeholder="Enter your name"
                 className="input input-bordered w-full"
               />
-            </div>
-            <div className="form-control">
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              variants={fadeInVariant}
+              className="form-control"
+            >
               <label className="label">
                 <span className="label-text">Email Address</span>
               </label>
@@ -59,8 +79,14 @@ const ContactUs = () => {
                 placeholder="Enter your email"
                 className="input input-bordered w-full"
               />
-            </div>
-            <div className="form-control">
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              variants={fadeInVariant}
+              className="form-control"
+            >
               <label className="label">
                 <span className="label-text">Your Message</span>
               </label>
@@ -68,12 +94,39 @@ const ContactUs = () => {
                 placeholder="Type your message"
                 className="textarea textarea-bordered w-full"
               ></textarea>
-            </div>
-            <button type="submit" className="btn btn-primary w-full">
+            </motion.div>
+
+            <motion.button
+              type="submit"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="btn btn-primary w-full"
+            >
               Send Message
-            </button>
+            </motion.button>
           </form>
-        </div>
+
+          {/* Contact Details */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={fadeInVariant}
+            className="mt-8 space-y-4"
+          >
+            <div className="flex items-center">
+              <FaPhoneAlt className="text-primary text-lg mr-3" />
+              <p className="text-gray-700">+123 456 7890</p>
+            </div>
+            <div className="flex items-center">
+              <FaEnvelope className="text-primary text-lg mr-3" />
+              <p className="text-gray-700">support@example.com</p>
+            </div>
+            <div className="flex items-center">
+              <FaMapMarkerAlt className="text-primary text-lg mr-3" />
+              <p className="text-gray-700">123 Main Street, City, Country</p>
+            </div>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   );

@@ -80,67 +80,6 @@ const PopularTutors = () => {
   };
 
   return (
-    // <motion.div
-    //   initial="hidden"
-    //   animate="visible"
-    //   className="w-11/12 mx-auto py-8"
-    // >
-    //   <h2 className="text-3xl font-bold text-center mb-8">
-    //     Most Popular Tutors
-    //   </h2>
-    //   <Swiper
-    //     modules={[Navigation, Pagination]}
-    //     navigation
-    //     autoplay={{
-    //       delay: 3000, // Delay between slides in milliseconds
-    //       disableOnInteraction: false, // Keeps autoplay going after user interaction
-    //     }}
-    //     pagination={{ clickable: true }}
-    //     spaceBetween={20}
-    //     slidesPerView={1}
-    //     breakpoints={{
-    //       640: { slidesPerView: 2 },
-    //       768: { slidesPerView: 3 },
-    //       1024: { slidesPerView: 4 },
-    //     }}
-    //     className="swiper-container"
-    //   >
-    //     {tutors.map((tutor) => (
-    //       <SwiperSlide key={tutor.id}>
-    //         <motion.div
-    //           whileHover={{ scale: 1.05 }}
-    //           className="card bg-base-100 shadow-md hover:shadow-lg group transition-all duration-300"
-    //         >
-    //           <Link to={`/tutors/${tutor.id}`}>
-    //             <div className="card-body">
-    //               <div className="flex items-center gap-4">
-    //                 <img
-    //                   src={tutor.avatar}
-    //                   alt={`${tutor.name}'s avatar`}
-    //                   className="w-16 h-16 rounded-full border"
-    //                 />
-    //                 <div>
-    //                   <h3 className="text-lg font-semibold">{tutor.name}</h3>
-    //                   <p className="text-sm text-gray-600">{tutor.subject}</p>
-    //                 </div>
-    //               </div>
-    //               <div className="mt-4 flex items-center justify-between">
-    //                 <div className="flex items-center gap-1 text-yellow-500">
-    //                   <FaStar />
-    //                   <span className="font-semibold">{tutor.rating}</span>
-    //                 </div>
-    //                 <p className="text-sm text-gray-600">
-    //                   {tutor.reviews} reviews
-    //                 </p>
-    //               </div>
-    //             </div>
-    //           </Link>
-    //         </motion.div>
-    //       </SwiperSlide>
-    //     ))}
-    //   </Swiper>
-    // </motion.div>
-
     <motion.div
       initial="hidden"
       animate="visible"
