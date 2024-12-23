@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { FaArrowRight, FaLanguage, FaBook, FaGlobe } from "react-icons/fa";
 import { SiGeocaching, SiGoogletranslate } from "react-icons/si";
 import { GiEarthAmerica } from "react-icons/gi";
@@ -7,7 +8,7 @@ import { MdTranslate } from "react-icons/md";
 import { LuJapaneseYen } from "react-icons/lu";
 
 const Categories = () => {
-  // List of language categories with React Icons as logos
+  // Categories with teacher count
   const categories = [
     { id: 1, title: "English", logo: <FaLanguage />, teachers: 120 },
     { id: 2, title: "Spanish", logo: <FaGlobe />, teachers: 85 },
@@ -20,40 +21,62 @@ const Categories = () => {
     { id: 9, title: "Italian", logo: <FaLanguage />, teachers: 35 },
   ];
 
+  // Framer Motion Variants
+  const cardVariant = {
+    hidden: { opacity: 0, scale: 0.8, y: 1000 },
+    visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 1.1 } },
+    hover: {
+      scale: 1.05,
+      boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.2) shadow-md",
+    },
+  };
+
   return (
-    <div className="w-11/12 mx-auto px-4 py-8">
-      <h2 className="text-3xl font-bold text-center mb-8">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      className="w-11/12 mx-auto px-4 py-8 "
+    >
+      <motion.h2
+        initial={{ opacity: 0, y: -1000 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.1 }}
+        className="text-3xl font-bold text-center mb-8"
+      >
         Language Categories
-      </h2>
+      </motion.h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {categories.map((category) => (
-          <Link
+          <motion.div
             key={category.id}
-            to="/find-tutors"
-            className="card bg-base-100 hover:bg-primary shadow-sm hover:shadow-lg group transition-all duration-300"
+            variants={cardVariant}
+            whileHover="hover"
+            initial="hidden"
+            animate="visible"
           >
-            <div className="card-body flex flex-row justify-between items-center">
-              <div className="flex items-center gap-4">
-                <div className="text-4xl text-primary group-hover:text-[#ffffff]">
-                  {category.logo}
+            <Link
+              to="/find-tutors"
+              className="card bg-base-100 shadow-md group transition-all duration-300"
+            >
+              <div className="card-body flex flex-row justify-between">
+                <div className="flex items-center gap-4">
+                  <div className="text-4xl text-primary">{category.logo}</div>
                 </div>
                 <div className="mt-2 text-sm text-gray-600">
-                  <h3 className="text-xl font-semibold group-hover:text-[#ffffff]">
-                    {category.title}
-                  </h3>
-                  <p className="text-xl font-normal group-hover:text-[rgba(255,255,255,0.7)]">
+                  <h3 className="text-xl font-semibold">{category.title}</h3>
+                  <h3 className="text-xl font-semibold">
                     {category.teachers} teachers available
-                  </p>
+                  </h3>
+                </div>
+                <div className="flex justify-end mt-4">
+                  <FaArrowRight className="text-xl text-gray-500 group-hover:text-primary transition-colors duration-300" />
                 </div>
               </div>
-              <div className="flex justify-end ">
-                <FaArrowRight className="text-xl text-primary group-hover:text-[#ffffff] transition-colors duration-300" />
-              </div>
-            </div>
-          </Link>
+            </Link>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -74,7 +74,7 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="navbar fixed top-0 left-0 w-full bg-base-100 shadow-md z-50">
+    <nav className="navbar fixed top-0 left-0 w-full bg-base-100 shadow-md z-50 ">
       <div className="w-11/12 mx-auto flex justify-between items-center py-3">
         <div className="flex-1">
           <NavLink

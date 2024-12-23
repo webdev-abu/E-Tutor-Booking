@@ -17,7 +17,7 @@ Welcome to **E-Tutor Booking**. An Online Tutor Booking Platform is a system des
 - JWT Authentication,
 - React swiper,
 - React lottie-react
-
+- React framer-motion,
 - React react-router-dom,
 - React Hot Toast,
 - React Fontawasomeicon,
