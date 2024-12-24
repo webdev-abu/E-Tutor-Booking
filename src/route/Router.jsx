@@ -7,6 +7,7 @@ import Register from "../pages/Authentication/Register";
 import FindTutors from "../pages/FindTutors";
 import CategoriesTutor from "../pages/CategoriesTutor";
 import TutorDetails from "../pages/TutorDetails";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/tutor-details/:id",
-        element: <TutorDetails />,
+        element: (
+          <PrivateRoute>
+            <TutorDetails />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",

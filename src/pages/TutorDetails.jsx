@@ -128,29 +128,15 @@
 
 // export default TutorDetails;
 
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FaLanguage, FaStar, FaUsers, FaBook } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { AuthContext } from "../providers/AuthProvider";
 
 const TutorDetails = () => {
-  //   const tutor = {
-  //     name: "Ethan F.",
-  //     badge: "Super Tutor",
-  //     rating: 5,
-  //     reviews: 140,
-  //     price: "BDT 5,999",
-  //     lessonTime: "50-min lesson",
-  //     activeStudents: 38,
-  //     category: "Italian",
-  //     logo: <FaLanguage />,
-  //     teachers: 35,
-  //     lessons: 4100,
-  //     languages: "Speaks English (Native), Chinese (Intermediate)",
-  //     image: "/path/to/avatar9.jpg",
-  //   };
-
+  const { user } = useContext(AuthContext);
   const { id } = useParams();
   const [tutor, setTutor] = useState([]);
 
