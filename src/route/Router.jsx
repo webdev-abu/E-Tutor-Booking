@@ -5,6 +5,7 @@ import ErrorPage from "../pages/ErrorPage";
 import Login from "../pages/Authentication/Login";
 import Register from "../pages/Authentication/Register";
 import FindTutors from "../pages/FindTutors";
+import CategoriesTutor from "../pages/CategoriesTutor";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,14 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "/find-tutors/:category",
+        element: <CategoriesTutor />,
+        // loader: (params) =>
+        //   fetch(
+        //     `${import.meta.env.VITE_API_URL}/find-tutors/${params.category}`
+        //   ),
       },
       {
         path: "/login",
