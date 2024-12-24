@@ -134,6 +134,7 @@ import { motion } from "framer-motion";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../providers/AuthProvider";
+import toast from "react-hot-toast";
 
 const TutorDetails = () => {
   const { user } = useContext(AuthContext);
@@ -156,6 +157,28 @@ const TutorDetails = () => {
   };
 
   console.log(tutor);
+  const handleBookedTutors = async () => {
+    try {
+      const { data } = await axios.post(
+        `${import.meta.env.VITE_API_URL}/booked-tutorial`,
+        {
+          tutor_id: id,
+          image: tutor.image,
+          language: tutor.category,
+          price: tutor.price,
+          tutorEmail: tutor.tutorEmail,
+          user_email: user.email,
+        }
+      );
+      if (data.insertedId) {
+        toast.success("Booked Successfully");
+      }
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
+    console.log();
+  };
 
   return (
     <motion.div
@@ -260,7 +283,12 @@ const TutorDetails = () => {
         whileHover={{ scale: 1.1 }}
         transition={{ duration: 0.2 }}
       >
-        <button className="btn btn-primary btn-wide">Book a Lesson</button>
+        <button
+          onClick={handleBookedTutors}
+          className="btn btn-primary btn-wide"
+        >
+          Book a Lesson
+        </button>
       </motion.div>
     </motion.div>
   );
