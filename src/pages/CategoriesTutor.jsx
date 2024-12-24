@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Card from "../components/Card";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const CategoriesTutor = () => {
   const { category } = useParams();
@@ -24,7 +25,15 @@ const CategoriesTutor = () => {
 
   console.log(tutors);
   return (
-    <div className="my-16">
+    <div className="mt-[140px] mb-16">
+      <motion.h2
+        initial={{ opacity: 0, y: -1000 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.1 }}
+        className="text-3xl font-bold text-center mb-10"
+      >
+        All {category} Tutors
+      </motion.h2>
       <div className="w-11/12 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 py-5">
         {tutors.map((tutor) => (
           <Card key={tutor._id} tutor={tutor} />
