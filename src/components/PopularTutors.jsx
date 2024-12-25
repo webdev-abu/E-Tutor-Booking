@@ -76,7 +76,7 @@ const PopularTutors = () => {
         className="swiper-container"
       >
         {tutors.map((tutor) => (
-          <SwiperSlide key={tutor.id}>
+          <SwiperSlide key={tutor._id}>
             <motion.div
               variants={cardVariant}
               whileHover={{ scale: 1.05 }}
