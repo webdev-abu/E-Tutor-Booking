@@ -38,15 +38,27 @@ const router = createBrowserRouter([
       },
       {
         path: "/Add-Tutorials",
-        element: <AddTutorials />,
+        element: (
+          <PrivateRoute>
+            <AddTutorials />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/my-tutorials",
-        element: <MyTutorials />,
+        element: (
+          <PrivateRoute>
+            <MyTutorials />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/update-tutorial/:id",
-        element: <UpdateTutorial />,
+        element: (
+          <PrivateRoute>
+            <UpdateTutorial />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/booked-tutors",
