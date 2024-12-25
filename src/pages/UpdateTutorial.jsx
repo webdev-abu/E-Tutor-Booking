@@ -1,16 +1,34 @@
-import React, { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import axios from "axios";
 import { AuthContext } from "../providers/AuthProvider";
 import toast from "react-hot-toast";
 
-const AddTutorials = () => {
+const UpdateTutorial = () => {
   const { user } = useContext(AuthContext);
+  const { id } = useParams();
+  const [tutorials, setTutorials] = useState({});
   const navigate = useNavigate();
 
+  useEffect(() => {
+    fetchTutorialData();
+  }, [id]);
+
+  const fetchTutorialData = async () => {
+    try {
+      const { data } = await axios.get(
+        `${import.meta.env.VITE_API_URL}/tutor-detail/${id}`
+      );
+      setTutorials(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  console.log(tutorials);
+
   // Handle form submission
-  const handleSubmit = async (e) => {
+  const handleUpdateTutorial = async (e) => {
     e.preventDefault();
     const form = e.target;
     const logo = form.logo.value;
@@ -27,8 +45,6 @@ const AddTutorials = () => {
     const description = form.description.value;
 
     const formData = {
-      name: user?.displayName,
-      email: user?.email,
       logo,
       badge,
       rating,
@@ -41,7 +57,6 @@ const AddTutorials = () => {
       languages,
       description,
       category,
-      review: 0,
     };
     console.log(formData);
 
@@ -53,7 +68,7 @@ const AddTutorials = () => {
       console.log(data);
       if (data.insertedId) {
         toast.success("Job added successfully");
-        navigate("/my-tutorials");
+        navigate("/my-posted-jobs");
         form.reset();
       }
     } catch (err) {
@@ -71,12 +86,40 @@ const AddTutorials = () => {
     >
       <div className="card w-full max-w-4xl bg-white shadow-lg rounded-lg p-6">
         <h2 className="text-2xl font-bold text-center mb-6">
-          Add Tutor Details
+          Update Tutor Details
         </h2>
         <form
-          onSubmit={handleSubmit}
+          onSubmit={handleUpdateTutorial}
           className="grid grid-cols-1 md:grid-cols-2 gap-6"
         >
+          {/* Name */}
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Name</span>
+            </label>
+            <input
+              type="text"
+              name="name"
+              defaultValue={tutorials.name}
+              className="input input-bordered w-full"
+              placeholder="Enter lesson duration (e.g., 1 hour)"
+              disabled
+            />
+          </div>
+          {/* Email */}
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Name</span>
+            </label>
+            <input
+              type="text"
+              name="email"
+              defaultValue={tutorials.email}
+              className="input input-bordered w-full"
+              placeholder="Enter lesson duration (e.g., 1 hour)"
+              disabled
+            />
+          </div>
           {/* Badge */}
           <div className="form-control">
             <label className="label">
@@ -105,6 +148,7 @@ const AddTutorials = () => {
             <input
               type="number"
               name="rating"
+              defaultValue={tutorials.rating}
               className="input input-bordered w-full"
               placeholder="Enter rating (e.g., 5)"
             />
@@ -118,6 +162,7 @@ const AddTutorials = () => {
             <input
               type="number"
               name="price"
+              defaultValue={tutorials.price}
               className="input input-bordered w-full"
               placeholder="Enter price per lesson"
             />
@@ -131,6 +176,7 @@ const AddTutorials = () => {
             <input
               type="text"
               name="lessonTime"
+              defaultValue={tutorials.lessonTime}
               className="input input-bordered w-full"
               placeholder="Enter lesson duration (e.g., 1 hour)"
             />
@@ -144,6 +190,7 @@ const AddTutorials = () => {
             <input
               type="number"
               name="activeStudents"
+              defaultValue={tutorials.activeStudents}
               className="input input-bordered w-full"
               placeholder="Enter number of active students"
             />
@@ -157,6 +204,7 @@ const AddTutorials = () => {
             <input
               type="url"
               name="logo"
+              defaultValue={tutorials.logo}
               className="input input-bordered w-full"
               placeholder="Enter logo URL"
             />
@@ -170,6 +218,7 @@ const AddTutorials = () => {
             <input
               type="number"
               name="teachers"
+              defaultValue={tutorials.teachers}
               className="input input-bordered w-full"
               placeholder="Enter number of teachers"
             />
@@ -183,6 +232,7 @@ const AddTutorials = () => {
             <input
               type="number"
               name="lessons"
+              defaultValue={tutorials.lessons}
               className="input input-bordered w-full"
               placeholder="Enter total lessons"
             />
@@ -196,6 +246,7 @@ const AddTutorials = () => {
             <input
               type="text"
               name="languages"
+              defaultValue={tutorials.languages}
               className="input input-bordered w-full"
               placeholder="Enter languages (comma-separated)"
             />
@@ -209,6 +260,7 @@ const AddTutorials = () => {
             <input
               type="url"
               name="image"
+              defaultValue={tutorials.image}
               className="input input-bordered w-full"
               placeholder="Enter image URL"
             />
@@ -222,6 +274,7 @@ const AddTutorials = () => {
             <input
               type="text"
               name="category"
+              defaultValue={tutorials.category}
               className="input input-bordered w-full"
               placeholder="Enter category (e.g., English , Hindi, etc.)"
             />
@@ -234,6 +287,7 @@ const AddTutorials = () => {
             </label>
             <textarea
               name="description"
+              defaultValue={tutorials.description}
               className="textarea textarea-bordered w-full"
               placeholder="Enter description"
               required
@@ -243,7 +297,7 @@ const AddTutorials = () => {
           {/* Submit Button */}
           <div className="form-control col-span-full mt-4">
             <button type="submit" className="btn btn-primary w-full">
-              Submit
+              Update
             </button>
           </div>
         </form>
@@ -252,4 +306,4 @@ const AddTutorials = () => {
   );
 };
 
-export default AddTutorials;
+export default UpdateTutorial;

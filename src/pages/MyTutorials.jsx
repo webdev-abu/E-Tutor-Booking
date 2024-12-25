@@ -1,35 +1,80 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import axios from "axios";
+import { AuthContext } from "../providers/AuthProvider";
+import toast from "react-hot-toast";
 
 const MyTutorials = () => {
+  const { user } = useContext(AuthContext);
   const [tutorials, setTutorials] = useState([]);
 
   // Fetch tutorials on component mount
   useEffect(() => {
-    const fetchTutorials = async () => {
-      try {
-        const response = await axios.get("/user-tutorials"); // Replace with your API endpoint
-        setTutorials(response.data);
-      } catch (error) {
-        console.error("Error fetching tutorials:", error);
-      }
-    };
-
     fetchTutorials();
   }, []);
 
-  // Handle delete
-  const handleDelete = async (id) => {
-    if (window.confirm("Are you sure you want to delete this tutorial?")) {
-      try {
-        await axios.delete(`/tutorial/${id}`); // Replace with your API endpoint
-        setTutorials(tutorials.filter((tutorial) => tutorial._id !== id));
-      } catch (error) {
-        console.error("Error deleting tutorial:", error);
-      }
+  const fetchTutorials = async () => {
+    try {
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_URL}/my-tutorials/${user.email}`
+      ); // Replace with your API endpoint
+      setTutorials(response.data);
+    } catch (error) {
+      console.error("Error fetching tutorials:", error);
     }
+  };
+
+  // Handle delete
+  //   const handleDelete = async (id) => {
+  //     if (window.confirm("Are you sure you want to delete this tutorial?")) {
+  //       try {
+  //       } catch (error) {
+  //         console.error("Error deleting tutorial:", error);
+  //       }
+  //     }
+  //   };
+
+  const handleDeleteTutorial = async (id) => {
+    try {
+      const { data } = await axios.delete(
+        `${import.meta.env.VITE_API_URL}/delete-tutorial/${id}`
+      ); // Replace with your API endpoint
+      setTutorials(tutorials.filter((tutorial) => tutorial._id !== id));
+      if (data.deletedCount > 0) {
+        toast.success(`Tutorial deleted successfully`, data);
+        fetchTutorials();
+      }
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+
+  const handleDeleteTutorialConform = (id) => {
+    toast((t) => (
+      <div>
+        <p>
+          Are you <b>sure you want to delete</b> this tutorial?
+        </p>
+        <div className="flex justify-center gap-12 items-center mt-4">
+          <button
+            className="bg-red-400 text-white px-3 py-2 rounded-md"
+            onClick={() => {
+              toast.dismiss(t.id);
+              handleDeleteTutorial(id);
+            }}
+          >
+            Yes
+          </button>
+          <button
+            className="bg-green-400 text-white px-3 py-2 rounded-md"
+            onClick={() => toast.dismiss(t.id)}
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    ));
   };
 
   // Handle update
@@ -73,7 +118,7 @@ const MyTutorials = () => {
                       className="w-16 h-16 object-cover rounded-md"
                     />
                   </td>
-                  <td>{tutorial.language}</td>
+                  <td>{tutorial.languages}</td>
                   <td>${tutorial.price}</td>
                   <td>{tutorial.description}</td>
                   <td>{tutorial.review}</td>
@@ -89,7 +134,7 @@ const MyTutorials = () => {
                     {/* Delete Button */}
                     <button
                       className="btn btn-error btn-sm flex items-center gap-1"
-                      onClick={() => handleDelete(tutorial._id)}
+                      onClick={() => handleDeleteTutorialConform(tutorial._id)}
                     >
                       <FaTrash />
                       Delete
