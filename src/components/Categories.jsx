@@ -22,8 +22,7 @@ const Categories = () => {
       console.error(error);
     }
   };
-
- 
+  // console.log(tutors);
 
   // Framer Motion Variants
   const cardVariant = {
