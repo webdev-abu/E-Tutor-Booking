@@ -35,7 +35,7 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
-          to="/courses"
+          to="/Add-Tutorials"
           className={({ isActive }) =>
             isActive
               ? "text-primary text-[16px] font-Heebo font-semibold"
@@ -48,7 +48,7 @@ const Navbar = () => {
 
       <li>
         <NavLink
-          to="/contact"
+          to="/my-tutorials"
           className={({ isActive }) =>
             isActive
               ? "text-primary text-[16px] font-Heebo font-semibold"
@@ -60,7 +60,7 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
-          to="/contact"
+          to="/booked-tutors"
           className={({ isActive }) =>
             isActive
               ? "text-primary text-[16px] font-Heebo font-semibold"

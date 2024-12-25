@@ -131,7 +131,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { FaLanguage, FaStar, FaUsers, FaBook } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../providers/AuthProvider";
 import toast from "react-hot-toast";
@@ -139,6 +139,7 @@ import toast from "react-hot-toast";
 const TutorDetails = () => {
   const { user } = useContext(AuthContext);
   const { id } = useParams();
+  const navigate = useNavigate();
   const [tutor, setTutor] = useState([]);
 
   useEffect(() => {
@@ -167,17 +168,17 @@ const TutorDetails = () => {
           language: tutor.category,
           price: tutor.price,
           tutorEmail: tutor.tutorEmail,
+          reviews: 0,
           user_email: user.email,
         }
       );
       if (data.insertedId) {
         toast.success("Booked Successfully");
+        navigate("/booked-tutors");
       }
-      console.log(data);
     } catch (error) {
-      console.error(error);
+      toast.error(error.message);
     }
-    console.log();
   };
 
   return (
