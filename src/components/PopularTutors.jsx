@@ -1,63 +1,83 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 // import { Navigation, Pagination, Autoplay } from "swiper";
 import { FaStar } from "react-icons/fa";
+import axios from "axios";
 
 const PopularTutors = () => {
+  const [tutors, setTutors] = useState([]);
+
+  useEffect(() => {
+    fetchAllTutors();
+  }, []);
+
+  const fetchAllTutors = async () => {
+    try {
+      const { data } = await axios.get(
+        `${import.meta.env.VITE_API_URL}/tutors`
+      );
+
+      setTutors(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  console.log(tutors.category);
   // Example tutor data
-  const tutors = [
-    {
-      id: 1,
-      name: "John Doe",
-      subject: "English",
-      rating: 4.8,
-      reviews: 120,
-      avatar: "https://via.placeholder.com/150", // Replace with actual image URLs
-      animation: {
-        hidden: { opacity: 0, x: -1000 },
-        visible: { opacity: 1, x: 0 },
-      },
-    },
-    {
-      id: 2,
-      name: "Jane Smith",
-      subject: "Mathematics",
-      rating: 4.9,
-      reviews: 95,
-      avatar: "https://via.placeholder.com/150",
-      animation: {
-        hidden: { opacity: 0, y: -1000 },
-        visible: { opacity: 1, y: 0 },
-      },
-    },
-    {
-      id: 3,
-      name: "Alice Brown",
-      subject: "Spanish",
-      rating: 4.7,
-      reviews: 80,
-      avatar: "https://via.placeholder.com/150",
-      animation: {
-        hidden: { opacity: 0, x: 1000 },
-        visible: { opacity: 1, x: 0 },
-      },
-    },
-    {
-      id: 4,
-      name: "David Wilson",
-      subject: "Physics",
-      rating: 4.6,
-      reviews: 70,
-      avatar: "https://via.placeholder.com/150",
-      animation: {
-        hidden: { opacity: 0, y: 1000 },
-        visible: { opacity: 1, y: 0 },
-      },
-    },
-  ];
+  // const tutors = [
+  //   {
+  //     id: 1,
+  //     name: "John Doe",
+  //     subject: "English",
+  //     rating: 4.8,
+  //     reviews: 120,
+  //     avatar: "https://via.placeholder.com/150", // Replace with actual image URLs
+  //     animation: {
+  //       hidden: { opacity: 0, x: -1000 },
+  //       visible: { opacity: 1, x: 0 },
+  //     },
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "Jane Smith",
+  //     subject: "Mathematics",
+  //     rating: 4.9,
+  //     reviews: 95,
+  //     avatar: "https://via.placeholder.com/150",
+  //     animation: {
+  //       hidden: { opacity: 0, y: -1000 },
+  //       visible: { opacity: 1, y: 0 },
+  //     },
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "Alice Brown",
+  //     subject: "Spanish",
+  //     rating: 4.7,
+  //     reviews: 80,
+  //     avatar: "https://via.placeholder.com/150",
+  //     animation: {
+  //       hidden: { opacity: 0, x: 1000 },
+  //       visible: { opacity: 1, x: 0 },
+  //     },
+  //   },
+  //   {
+  //     id: 4,
+  //     name: "David Wilson",
+  //     subject: "Physics",
+  //     rating: 4.6,
+  //     reviews: 70,
+  //     avatar: "https://via.placeholder.com/150",
+  //     animation: {
+  //       hidden: { opacity: 0, y: 1000 },
+  //       visible: { opacity: 1, y: 0 },
+  //     },
+  //   },
+  // ];
 
   // Animation Variants
   const containerVariant = {
@@ -91,7 +111,7 @@ const PopularTutors = () => {
       </h2>
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
-        navigation
+        navigation={false}
         pagination={{ clickable: true }}
         autoplay={{
           delay: 3000, // Delay between slides in milliseconds
@@ -117,7 +137,7 @@ const PopularTutors = () => {
                 <div className="flex justify-between items-center px-5 py-5">
                   <div className="flex items-center justify-between gap-3">
                     <img
-                      src={tutor.avatar}
+                      src={tutor.image}
                       alt={`${tutor.name}'s avatar`}
                       className="w-16 h-16 rounded-full border"
                     />
