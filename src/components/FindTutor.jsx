@@ -59,46 +59,6 @@ const FindTutor = () => {
         </div>
 
         {/* Tutors Table */}
-        {/* <div className="overflow-x-auto">
-          <table className="table w-full">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Image</th>
-                <th>Language</th>
-                <th>Price</th>
-                <th>Review</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filteredTutors.length > 0 ? (
-                filteredTutors.map((tutor, index) => (
-                  <tr key={tutor._id}>
-                    <td>{index + 1}</td>
-                    <td>{tutor.name}</td>
-                    <td>
-                      <img
-                        src={tutor.image}
-                        alt={tutor.name}
-                        className="w-16 h-16 object-cover rounded-md"
-                      />
-                    </td>
-                    <td>{tutor.languages}</td>
-                    <td>${tutor.price}</td>
-                    <td>{tutor.reviews}</td>
-                  </tr>
-                ))
-              ) : (
-                <tr>
-                  <td colSpan="6" className="text-center">
-                    No tutors found matching "{searchText}"
-                  </td>
-                </tr>
-              )}
-            </tbody>
-          </table>
-        </div> */}
       </div>
       <div className="w-11/12 mx-auto bg-white shadow-lg rounded-lg my-8">
         {filteredTutors.length > 0 ? (

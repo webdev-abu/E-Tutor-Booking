@@ -122,27 +122,6 @@ const MyBookTutors = () => {
   };
 
   return (
-    // <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    //   {tutors.map((tutor) => (
-    //     <div key={tutor._id} className="card bg-white shadow-lg p-4">
-    //       <img
-    //         src={tutor.image}
-    //         alt={tutor.name}
-    //         className="w-full h-40 object-cover"
-    //       />
-    //       <h3 className="text-lg font-bold mt-2">{tutor.name}</h3>
-    //       <p>Language: {tutor.language}</p>
-    //       <p>Price: ${tutor.price}</p>
-    //       <p>Reviews: {tutor.reviews}</p>
-    //       <button
-    //         className="btn btn-primary mt-2"
-    //         onClick={() => handleReview(tutor.tutor_id)}
-    //       >
-    //         Review
-    //       </button>
-    //     </div>
-    //   ))}
-    // </div>
     <div className="bg-white dark:bg-gray-900 text-black dark:text-white">
       <div className="w-11/12 mx-auto py-8 ">
         <h1 className="text-3xl font-bold text-primary mb-6">Booked Tutors</h1>

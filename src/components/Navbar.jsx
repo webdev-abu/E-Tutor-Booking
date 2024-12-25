@@ -72,6 +72,18 @@ const Navbar = () => {
           My booked tutors
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/contact-us"
+          className={({ isActive }) =>
+            isActive
+              ? "text-primary text-[16px] font-Heebo font-semibold"
+              : "text-black text-[16px] font-Heebo font-semibold"
+          }
+        >
+          Contact Us
+        </NavLink>
+      </li>
       <div className="flex-none mr-6">
         <button
           className="btn btn-circle"

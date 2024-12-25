@@ -34,11 +34,6 @@ const FindTutors = () => {
         All Tutors
       </motion.h2>
       <FindTutor />
-      {/* <div className="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 p-5">
-        {tutors.map((tutor) => (
-          <Card key={tutor._id} tutor={tutor} />
-        ))}
-      </div> */}
     </div>
   );
 };
