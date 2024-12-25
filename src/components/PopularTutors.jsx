@@ -26,8 +26,6 @@ const PopularTutors = () => {
     }
   };
 
-  console.log(tutors.category);
-
   // Animation Variants
   const containerVariant = {
     hidden: { opacity: 0, x: 0 },

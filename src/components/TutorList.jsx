@@ -199,7 +199,6 @@ const TutorList = () => {
     }
   };
 
-  console.log(tutors);
   return (
     <>
       <motion.h2

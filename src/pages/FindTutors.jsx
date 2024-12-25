@@ -23,7 +23,6 @@ const FindTutors = () => {
     }
   };
 
-  console.log(tutors);
   return (
     <>
       <Helmet>

@@ -28,7 +28,6 @@ const TutorDetails = () => {
     }
   };
 
-  console.log(tutor);
   const handleBookedTutors = async () => {
     try {
       const { data } = await axios.post(

@@ -26,7 +26,6 @@ const UpdateTutorial = () => {
       console.error(error);
     }
   };
-  console.log(tutorials);
 
   // Handle form submission
   const handleUpdateTutorial = async (e) => {
@@ -59,14 +58,13 @@ const UpdateTutorial = () => {
       description,
       category,
     };
-    console.log(formData);
 
     try {
       const { data } = await axios.put(
         `${import.meta.env.VITE_API_URL}/update-tutorials/${id}`,
         formData
       );
-      console.log(data);
+
       if (data.modifiedCount > 0) {
         toast.success("Tutorials Updated successfully");
         navigate("/my-tutorials");

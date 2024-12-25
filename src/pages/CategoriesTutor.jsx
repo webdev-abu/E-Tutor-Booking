@@ -24,7 +24,6 @@ const CategoriesTutor = () => {
     }
   };
 
-  console.log(tutors);
   return (
     <>
       <Helmet>

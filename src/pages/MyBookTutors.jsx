@@ -11,7 +11,6 @@ const MyBookTutors = () => {
   const { user } = useContext(AuthContext);
   const [tutors, setTutors] = useState([]);
   const [tutorsReview, setTutorsReview] = useState([]);
-  console.log(tutorsReview);
 
   useEffect(() => {
     axios

@@ -1,4 +1,4 @@
-# [E-Tutor Booking](https://b10-a10-sport-store.web.app/)
+# [E-Tutor Booking](https://tutor-booking-43ee8.web.app/)
 
 Welcome to **E-Tutor Booking**. An Online Tutor Booking Platform is a system designed to connect students with qualified tutors for various subjects or skills.
 
@@ -54,7 +54,7 @@ Welcome to **E-Tutor Booking**. An Online Tutor Booking Platform is a system des
 
 # Live Link
 
-# [https://b10-a10-sport-store.web.app/](https://b10-a10-sport-store.web.app/)
+# [https://tutor-booking-43ee8.web.app/](https://tutor-booking-43ee8.web.app/)
 
 # Client-side GitHub Code Link
 
