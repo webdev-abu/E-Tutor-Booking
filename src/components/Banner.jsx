@@ -6,26 +6,29 @@ import { FaArrowRight } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Banner = () => {
+  const { user } = useContext(AuthContext);
   const slides = [
     {
       image: "https://i.ibb.co/MMrWF6b/carousel-1.jpg",
       title: "Best Online Courses",
       description: "Get Educated Online From Your Home!",
-      link: "/login",
+      link: "/find-tutors",
     },
     {
       image: "https://i.ibb.co/0jVzcVB/carousel-2.jpg",
       title: "Best Online Courses",
       description: "Save big on your favorite brands!",
-      link: "/login",
+      link: "/find-tutors",
     },
     {
       image: "https://i.ibb.co/VwN5MMv/course-3.jpg",
       title: "Best Online Courses",
       description: "Be part of our sports enthusiasts group!",
-      link: "/login",
+      link: "/find-tutors",
     },
   ];
 
@@ -60,13 +63,17 @@ const Banner = () => {
                     Read More
                     <FaArrowRight />
                   </Link>
-                  <Link
-                    to={slide.link}
-                    className="btn btn-light py-md-3 px-md-5"
-                  >
-                    Join Now
-                    <FaArrowRight />
-                  </Link>
+                  {user ? (
+                    ""
+                  ) : (
+                    <Link
+                      to={slide.link}
+                      className="btn btn-light py-md-3 px-md-5"
+                    >
+                      Join Now
+                      <FaArrowRight />
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>

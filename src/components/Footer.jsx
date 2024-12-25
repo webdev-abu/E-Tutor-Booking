@@ -96,32 +96,32 @@ const Footer = () => {
           <h3 className="text-lg font-bold mb-4">Gallery</h3>
           <div className="grid grid-cols-3 gap-2">
             <img
-              src="/images/gallery1.jpg"
+              src="https://i.ibb.co/5BH1N5X/course-3.jpg"
               alt="Gallery 1"
               className="w-full h-auto rounded-md"
             />
             <img
-              src="/images/gallery2.jpg"
+              src="https://i.ibb.co/194ZMqy/cat-2.jpg"
               alt="Gallery 2"
               className="w-full h-auto rounded-md"
             />
             <img
-              src="/images/gallery3.jpg"
+              src="https://i.ibb.co/5BH1N5X/course-3.jpg"
               alt="Gallery 3"
               className="w-full h-auto rounded-md"
             />
             <img
-              src="/images/gallery4.jpg"
+              src="https://i.ibb.co/5BH1N5X/course-3.jpg"
               alt="Gallery 4"
               className="w-full h-auto rounded-md"
             />
             <img
-              src="/images/gallery5.jpg"
+              src="https://i.ibb.co/194ZMqy/cat-2.jpg"
               alt="Gallery 5"
               className="w-full h-auto rounded-md"
             />
             <img
-              src="/images/gallery6.jpg"
+              src="https://i.ibb.co/5BH1N5X/course-3.jpg"
               alt="Gallery 6"
               className="w-full h-auto rounded-md"
             />
@@ -149,9 +149,9 @@ const Footer = () => {
 
       {/* Bottom Section */}
       <div className="bg-base-200 text-base-content py-4">
-        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
+        <div className="w-11/12 mx-auto flex flex-col md:flex-row justify-between items-center">
           <p className="text-center md:text-left">
-            © Your Site Name, All Rights Reserved. Designed by HTML Codex
+            © E-Tutors, All Rights Reserved. Designed by Abu Tahir
           </p>
           <div className="flex gap-4 mt-2 md:mt-0">
             <Link to="/home" className="hover:underline">

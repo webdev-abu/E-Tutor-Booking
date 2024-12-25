@@ -12,7 +12,7 @@ const MyTutorials = () => {
   // Fetch tutorials on component mount
   useEffect(() => {
     fetchTutorials();
-  }, []);
+  }, [user]);
 
   const fetchTutorials = async () => {
     try {
@@ -24,16 +24,6 @@ const MyTutorials = () => {
       console.error("Error fetching tutorials:", error);
     }
   };
-
-  // Handle delete
-  //   const handleDelete = async (id) => {
-  //     if (window.confirm("Are you sure you want to delete this tutorial?")) {
-  //       try {
-  //       } catch (error) {
-  //         console.error("Error deleting tutorial:", error);
-  //       }
-  //     }
-  //   };
 
   const handleDeleteTutorial = async (id) => {
     try {
@@ -121,7 +111,7 @@ const MyTutorials = () => {
                   <td>{tutorial.languages}</td>
                   <td>${tutorial.price}</td>
                   <td>{tutorial.description}</td>
-                  <td>{tutorial.review}</td>
+                  <td>{tutorial.reviews}</td>
                   <td className="flex items-center gap-2">
                     {/* Update Button */}
                     <button

@@ -183,7 +183,7 @@ const TutorDetails = () => {
 
   return (
     <motion.div
-      className="w-11/12 mx-auto p-6 bg-base-100 rounded-lg shadow-lg"
+      className="w-11/12 mx-auto p-6 bg-base-100 rounded-lg shadow-lg mt-32 mb-16"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -200,14 +200,7 @@ const TutorDetails = () => {
         <div>
           <h1 className="text-3xl font-bold text-primary">{tutor?.name}</h1>
           <span className="badge badge-secondary">{tutor?.badge}</span>
-          {/* <div className="flex items-center gap-2 mt-2">
-            {[...Array(tutor?.rating)]?.map((_, i) => (
-              <FaStar key={i} className="text-yellow-500" />
-            ))}
-            <span className="text-sm text-gray-600">
-              ({tutor?.reviews} Reviews)
-            </span>
-          </div> */}
+
           <div className="flex items-center gap-2 mt-2">
             <FaStar className="text-yellow-500" />
             <span className="text-lg font-bold">{tutor.rating}</span>

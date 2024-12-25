@@ -41,7 +41,7 @@ const AddTutorials = () => {
       languages,
       description,
       category,
-      review: 0,
+      reviews: 0,
     };
     console.log(formData);
 
@@ -69,7 +69,7 @@ const AddTutorials = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <div className="card w-full max-w-4xl bg-white shadow-lg rounded-lg p-6">
+      <div className="card w-full max-w-4xl bg-white shadow-lg rounded-lg p-6 my-16">
         <h2 className="text-2xl font-bold text-center mb-6">
           Add Tutor Details
         </h2>

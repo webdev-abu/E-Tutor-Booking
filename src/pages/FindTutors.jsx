@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Card from "../components/Card";
 import { motion } from "framer-motion";
+import FindTutor from "../components/FindTutor";
 
 const FindTutors = () => {
   const [tutors, setTutors] = useState([]);
@@ -32,11 +33,12 @@ const FindTutors = () => {
       >
         All Tutors
       </motion.h2>
-      <div className="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 p-5">
+      <FindTutor />
+      {/* <div className="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 p-5">
         {tutors.map((tutor) => (
           <Card key={tutor._id} tutor={tutor} />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };

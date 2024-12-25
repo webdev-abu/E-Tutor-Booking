@@ -61,19 +61,19 @@ const UpdateTutorial = () => {
     console.log(formData);
 
     try {
-      const { data } = await axios.post(
-        `${import.meta.env.VITE_API_URL}/add-tutorial`,
+      const { data } = await axios.put(
+        `${import.meta.env.VITE_API_URL}/update-tutorials/${id}`,
         formData
       );
       console.log(data);
-      if (data.insertedId) {
-        toast.success("Job added successfully");
-        navigate("/my-posted-jobs");
+      if (data.modifiedCount > 0) {
+        toast.success("Tutorials Updated successfully");
+        navigate("/my-tutorials");
         form.reset();
       }
     } catch (err) {
       console.error(err);
-      toast.error("Failed to add job");
+      toast.error("Failed to add Tutorials");
     }
   };
 
@@ -84,7 +84,7 @@ const UpdateTutorial = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <div className="card w-full max-w-4xl bg-white shadow-lg rounded-lg p-6">
+      <div className="card w-full max-w-4xl bg-white shadow-lg rounded-lg p-6 my-16">
         <h2 className="text-2xl font-bold text-center mb-6">
           Update Tutor Details
         </h2>
