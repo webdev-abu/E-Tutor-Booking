@@ -24,7 +24,7 @@ const FindTutors = () => {
 
   console.log(tutors);
   return (
-    <div className="mt-[140px] mb-16">
+    <div className="mt-[140px] mb-16 ">
       <motion.h2
         initial={{ opacity: 0, y: -1000 }}
         animate={{ opacity: 1, y: 0 }}

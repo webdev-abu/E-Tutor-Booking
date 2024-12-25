@@ -32,7 +32,7 @@ const Register = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 text-black dark:text-white">
       <div className="card w-full max-w-md bg-base-100 shadow-xl p-6">
         <h2 className="text-2xl font-bold text-center text-primary mb-4">
           Sign Up
@@ -117,7 +117,7 @@ const Register = () => {
         </form>
 
         {/* Footer */}
-        <p className="text-sm text-center mt-4">
+        <p className="text-sm text-center mt-4 text-[#1e1e1e]">
           Already have an account?{" "}
           <NavLink to="/login" className="text-primary font-bold">
             Login

@@ -75,12 +75,12 @@ const MyTutorials = () => {
 
   return (
     <motion.div
-      className="min-h-screen bg-gray-100 flex flex-col items-center p-6"
+      className="min-h-screen bg-gray-100 dark:bg-gray-900 text-black dark:text-white flex flex-col items-center p-6"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <div className="w-full max-w-5xl bg-white shadow-lg rounded-lg p-6">
+      <div className="w-11/12 mx-auto bg-white text-[#1e1e1e] shadow-lg rounded-lg p-6">
         <h2 className="text-2xl font-bold text-center mb-6">Your Tutorials</h2>
         <div className="overflow-x-auto">
           <table className="table w-full">

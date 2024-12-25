@@ -55,7 +55,7 @@ const Login = () => {
     }
   };
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 text-black dark:text-white">
       <div className="card w-full max-w-md bg-base-100 shadow-xl p-6">
         <h2 className="text-2xl font-bold text-center text-primary mb-4">
           Login
@@ -105,14 +105,14 @@ const Login = () => {
         </form>
 
         {/* Footer */}
-        <p className="text-sm text-center my-5">
+        <p className="text-sm text-center my-5 text-[#1e1e1e]">
           Don't have an account?{" "}
           <NavLink to="/registration" className="text-primary font-bold">
             Sign Up
           </NavLink>
         </p>
 
-        <div className="divider">OR</div>
+        <div className="divider text-[#1e1e1e]">OR</div>
         <div className="my-2">
           <button
             onClick={handleGoogleSignIn}

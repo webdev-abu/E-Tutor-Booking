@@ -17,7 +17,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-blue-50 to-purple-100 flex items-center justify-center py-10 px-5">
+    <div className="min-h-screen text-[#1e1e1e] bg-gradient-to-r from-blue-50 to-purple-100 flex items-center justify-center py-10 px-5">
       <div className="grid lg:grid-cols-2 gap-10 w-full max-w-6xl">
         {/* Left Section (Lottie Animation) */}
         <motion.div

@@ -133,8 +133,10 @@ const Stats = () => {
           >
             <div className="card-body flex flex-col items-center text-center">
               <div className="text-5xl text-primary mb-4">{stat.icon}</div>
-              <h3 className="text-xl font-semibold">{stat.title}</h3>
-              <p className="text-2xl font-bold">{stat.count}</p>
+              <h3 className="text-xl font-semibold text-[#1e1e1e]">
+                {stat.title}
+              </h3>
+              <p className="text-2xl font-bold text-[#1e1e1e]">{stat.count}</p>
             </div>
           </motion.div>
         ))}

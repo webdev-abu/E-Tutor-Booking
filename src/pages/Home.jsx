@@ -8,7 +8,7 @@ import TutorList from "../components/TutorList";
 
 const Home = () => {
   return (
-    <div>
+    <div className=" bg-white dark:bg-gray-900 text-black dark:text-white">
       <Banner />
       <section className="my-10">
         <Stats />

@@ -12,62 +12,11 @@ const Card = ({ tutor }) => {
   };
 
   return (
-    // <motion.div
-    //   initial="hidden"
-    //   whileInView="visible"
-    //   variants={fadeInVariant}
-    //   className="card  bg-white shadow-lg rounded-lg overflow-hidden"
-    // >
-    //   {/* Header Section */}
-    //   <div className="flex items-center p-4 gap-4">
-    //     {/* Avatar */}
-    //     <img
-    //       src={tutor.image}
-    //       alt={`${tutor.name}'s avatar`}
-    //       className="w-16 h-16 rounded-full border-2 border-primary"
-    //     />
-    //     <div>
-    //       <h2 className="text-lg font-bold text-gray-800">
-    //         {tutor.name}{" "}
-    //         <span className="badge badge-success">{tutor.badge}</span>
-    //       </h2>
-    //       <p className="text-sm text-gray-500">{tutor.languages}</p>
-    //     </div>
-    //   </div>
-
-    //   {/* Details Section */}
-    //   <div className="p-4 border-t border-gray-200">
-    //     <div className="flex items-center justify-between mb-2">
-    //       <div className="flex items-center text-yellow-500 gap-1">
-    //         <FaStar />
-    //         <span className="font-bold">{tutor.rating}</span>
-    //         <span className="text-sm text-gray-500">
-    //           ({tutor.reviews} reviews)
-    //         </span>
-    //       </div>
-    //       <p className="text-primary font-semibold">{tutor.price}</p>
-    //     </div>
-    //     <p className="text-sm text-gray-500">{tutor.lessonTime}</p>
-    //     <p className="text-sm text-gray-500">
-    //       {tutor.activeStudents} active students, {tutor.lessons} lessons
-    //     </p>
-    //   </div>
-
-    //   {/* Action Button */}
-    //   <div className="p-4 bg-gradient-to-r from-pink-500 to-purple-500 text-center">
-    //     <Link
-    //       to={`/tutor-details/${tutor?._id}`}
-    //       className="btn btn-secondary w-full"
-    //     >
-    //       Show Detail
-    //     </Link>
-    //   </div>
-    // </motion.div>
     <motion.div
       initial="hidden"
       whileInView="visible"
       variants={fadeInVariant}
-      className="flex items-center justify-between bg-white shadow-md rounded-lg p-4"
+      className="flex items-center justify-between bg-white text-[#1e1e1e] shadow-md rounded-lg p-4"
     >
       {/* Left Section - Tutor Info */}
       <div className="flex items-center gap-4">

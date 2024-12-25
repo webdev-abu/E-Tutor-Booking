@@ -1,11 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
-import { FaBars, FaTimes, FaArrowRight } from "react-icons/fa";
+import { FaBars, FaTimes, FaArrowRight, FaMoon, FaSun } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
+import { ThemeContext } from "./ThemeProvider";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   const links = (
     <>
@@ -70,6 +72,19 @@ const Navbar = () => {
           My booked tutors
         </NavLink>
       </li>
+      <div className="flex-none mr-6">
+        <button
+          className="btn btn-circle"
+          onClick={toggleTheme}
+          aria-label="Toggle Theme"
+        >
+          {theme === "light" ? (
+            <FaMoon className="text-xl text-gray-600 dark:text-gray-200" />
+          ) : (
+            <FaSun className="text-xl text-yellow-400" />
+          )}
+        </button>
+      </div>
     </>
   );
 

@@ -64,13 +64,13 @@ const AddTutorials = () => {
 
   return (
     <motion.div
-      className="flex justify-center items-center min-h-screen bg-gray-100"
+      className="flex justify-center items-center min-h-screen bg-gray-100 dark:bg-gray-900 text-black dark:text-white"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <div className="card w-full max-w-4xl bg-white shadow-lg rounded-lg p-6 my-16">
-        <h2 className="text-2xl font-bold text-center mb-6">
+      <div className="card w-11/12 mx-auto text-[#1e1e1e] bg-white shadow-lg rounded-lg p-6 my-16">
+        <h2 className="text-2xl font-bold text-center mb-6 text-[#1e1e1e]">
           Add Tutor Details
         </h2>
         <form
@@ -243,7 +243,7 @@ const AddTutorials = () => {
           {/* Submit Button */}
           <div className="form-control col-span-full mt-4">
             <button type="submit" className="btn btn-primary w-full">
-              Submit
+              Add Tutorial
             </button>
           </div>
         </form>

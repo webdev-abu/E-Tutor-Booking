@@ -122,7 +122,9 @@ const PopularTutors = () => {
                       className="w-16 h-16 rounded-full border"
                     />
                     <div>
-                      <h3 className="text-lg font-semibold">{tutor.name}</h3>
+                      <h3 className="text-lg font-semibold text-[#1e1e1e]">
+                        {tutor.name}
+                      </h3>
                       <p className="text-sm text-gray-600">{tutor.subject}</p>
                     </div>
                   </div>
