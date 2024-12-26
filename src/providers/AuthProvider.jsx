@@ -54,7 +54,7 @@ const AuthProvider = ({ children }) => {
       setUser(currentUser);
       console.log("User is Login Email", currentUser?.email);
       // jwt authentication
-      if (currentUser.email) {
+      if (currentUser?.email) {
         const user = { email: currentUser.email };
         axios
           .post(`${import.meta.env.VITE_API_URL}/jwt`, user, {
