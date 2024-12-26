@@ -62,7 +62,7 @@ const FindTutor = () => {
       </div>
       <div className="w-11/12 mx-auto bg-white shadow-lg rounded-lg my-8">
         {filteredTutors.length > 0 ? (
-          <div className="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 py-8">
+          <div className="w-11/12 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 py-8">
             {filteredTutors.map((tutor) => (
               <Card key={tutor._id} tutor={tutor} />
             ))}

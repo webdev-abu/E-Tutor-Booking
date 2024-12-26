@@ -16,20 +16,20 @@ const Card = ({ tutor }) => {
       initial="hidden"
       whileInView="visible"
       variants={fadeInVariant}
-      className="flex items-center justify-between bg-white text-[#1e1e1e] shadow-md rounded-lg p-4"
+      className="flex items-center flex-col md:flex-row justify-between bg-white text-[#1e1e1e] shadow-md rounded-lg p-4"
     >
       {/* Left Section - Tutor Info */}
-      <div className="flex items-center gap-4">
+      <div className="flex flex-col md:flex-row  md:items-center gap-4 mb-4">
         {/* Tutor Image */}
         <img
           src={tutor.image}
           alt={`${tutor.name}'s avatar`}
-          className="w-32 h-32 rounded-sm"
+          className="w-full h-full md:w-36 md:h-36 rounded-sm "
         />
 
         {/* Tutor Details */}
         <div>
-          <h2 className="text-xl font-bold flex items-center">
+          <h2 className="text-xl font-bold flex items-center justify-between gap-6">
             {tutor.name}
             <span className="ml-2 text-sm text-gray-500 font-medium">🇵🇱</span>
           </h2>
@@ -43,9 +43,9 @@ const Card = ({ tutor }) => {
       </div>
 
       {/* Right Section - Rating, Price & CTA */}
-      <div className="flex flex-col items-end gap-2">
+      <div className="w-full md:w-1/3 flex flex-col justify-center items-start md:flex-col md:items-end gap-3">
         {/* Rating */}
-        <div className="flex items-center gap-1">
+        <div className="flex md:items-center gap-1">
           <FaStar className="text-yellow-500" />
           <span className="text-lg font-bold">{tutor.rating}</span>
           <span className="text-sm text-gray-500">

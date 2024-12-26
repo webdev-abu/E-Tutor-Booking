@@ -38,7 +38,7 @@ const CategoriesTutor = () => {
         >
           All {category} Tutors
         </motion.h2>
-        <div className="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 py-5">
+        <div className="w-11/12 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 py-5">
           {tutors.map((tutor) => (
             <Card key={tutor._id} tutor={tutor} />
           ))}
