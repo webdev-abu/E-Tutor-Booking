@@ -20,7 +20,10 @@ const TutorDetails = () => {
   const fetchAllTutors = async () => {
     try {
       const { data } = await axios.get(
-        `${import.meta.env.VITE_API_URL}/tutor-detail/${id}`
+        `${import.meta.env.VITE_API_URL}/tutor-detail/${id}`,
+        {
+          withCredentials: true,
+        }
       );
       setTutor(data);
     } catch (error) {

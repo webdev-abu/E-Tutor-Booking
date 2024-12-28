@@ -14,7 +14,9 @@ const MyBookTutors = () => {
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_API_URL}/booked-tutorial/${user.email}`)
+      .get(`${import.meta.env.VITE_API_URL}/booked-tutorial/${user.email}`, {
+        withCredentials: true,
+      })
       .then((res) => setTutors(res.data))
       .catch((err) => console.error(err));
   }, []);
