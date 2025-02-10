@@ -85,11 +85,7 @@ const Navbar = () => {
         </NavLink>
       </li>
       <div className="flex-none mr-6">
-        <button
-          className="btn btn-circle"
-          onClick={toggleTheme}
-          aria-label="Toggle Theme"
-        >
+        <button className="" onClick={toggleTheme} aria-label="Toggle Theme">
           {theme === "light" ? (
             <FaMoon className="text-xl text-gray-600 dark:text-gray-200" />
           ) : (
@@ -101,7 +97,7 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="navbar fixed top-0 left-0 w-full bg-base-100 shadow-md z-50 ">
+    <nav className="navbar fixed top-0 left-0 w-full bg-base-100 shadow-md z-50 items-center ">
       <div className="w-11/12 mx-auto flex justify-between items-center py-3">
         <div className="flex-1">
           <NavLink
@@ -130,7 +126,9 @@ const Navbar = () => {
 
         {/* Desktop Navigation Links */}
         <div className="hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 gap-4">{links}</ul>
+          <ul className="menu menu-horizontal px-1 gap-4 items-center">
+            {links}
+          </ul>
         </div>
 
         {/* Mobile Menu Button */}

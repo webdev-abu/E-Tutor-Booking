@@ -28,7 +28,7 @@ const Footer = () => {
             </li>
             <li>
               <Link
-                to="/contact"
+                to="/contact-us"
                 className="hover:underline flex items-center gap-2"
               >
                 <span className="text-accent">&gt;</span> Contact Us
