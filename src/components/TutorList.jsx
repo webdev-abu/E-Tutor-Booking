@@ -3,6 +3,7 @@ import Card from "../components/Card";
 import { motion } from "framer-motion";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import HeaderTitle from "./HeaderTitle";
 const TutorList = () => {
   // const tutors = [
   //   {
@@ -201,14 +202,12 @@ const TutorList = () => {
 
   return (
     <>
-      <motion.h2
-        initial={{ opacity: 0, y: 1000 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2 }}
-        className="text-3xl font-bold text-center mb-8"
-      >
-        Our Popular Tutors
-      </motion.h2>
+      <HeaderTitle
+        title={"Our Popular Tutors"}
+        description={
+          "Meet our top-rated tutors who have helped countless students excel in their learning journey!"
+        }
+      />
       <div className="w-11/12 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 p-5">
         {tutors.slice(0, 4).map((tutor) => (
           <Card key={tutor._id} tutor={tutor} />

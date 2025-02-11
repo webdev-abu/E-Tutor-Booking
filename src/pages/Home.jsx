@@ -15,19 +15,19 @@ const Home = () => {
       </Helmet>
       <div className=" bg-white dark:bg-gray-900 text-black dark:text-white">
         <Banner />
-        <section className="my-10">
+        <section className="my-0">
           <Stats />
         </section>
 
-        <section className="my-10">
+        <section className="my-0">
           <Categories />
         </section>
 
-        <section className="my-10">
+        <section className="my-0">
           <TutorList />
         </section>
 
-        <section className="my-10">
+        <section className="my-0">
           <PopularTutors />
         </section>
         <section className="my-10">

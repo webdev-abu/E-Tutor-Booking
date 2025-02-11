@@ -6,6 +6,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 // import { Navigation, Pagination, Autoplay } from "swiper";
 import { FaStar } from "react-icons/fa";
 import axios from "axios";
+import HeaderTitle from "./HeaderTitle";
 
 const PopularTutors = () => {
   const [tutors, setTutors] = useState([]);
@@ -53,9 +54,15 @@ const PopularTutors = () => {
       transition={{ duration: 0.9 }}
       className="w-11/12 mx-auto py-8 "
     >
-      <h2 className="text-3xl font-bold text-center mb-8">
+      {/* <h2 className="text-3xl font-bold text-center mb-8">
         Most Popular Courses
-      </h2>
+      </h2> */}
+      <HeaderTitle
+        title={"Most Popular Tutors"}
+        description={
+          "Learn from the Best – Meet Our Top-Rated Tutors Ready to Help You Succeed!"
+        }
+      />
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation={false}

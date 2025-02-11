@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
 import axios from "axios";
+import HeaderTitle from "./HeaderTitle";
 
 const Categories = () => {
   const [tutors, setTutors] = useState([]);
@@ -35,19 +36,13 @@ const Categories = () => {
   };
 
   return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      className="w-11/12 mx-auto px-4 py-8 "
-    >
-      <motion.h2
-        initial={{ opacity: 0, y: -1000 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.1 }}
-        className="text-3xl font-bold text-center mb-8"
-      >
-        Language Categories
-      </motion.h2>
+    <motion.div initial="hidden" animate="visible" className="w-11/12 mx-auto">
+      <HeaderTitle
+        title={"Language Categories"}
+        description={
+          "Here are some Language Categories for your Online Tutor Booking Platform!"
+        }
+      />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {tutors.map((category) => (
           <motion.div

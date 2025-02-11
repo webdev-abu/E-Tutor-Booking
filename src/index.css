@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.navbar {
+  padding: 0.5rem 0;
+}
+
 .swiper-pagination-bullet {
   width: 20px !important;
   height: 20px !important;

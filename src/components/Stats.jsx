@@ -6,6 +6,7 @@ import {
   FaLanguage,
   FaChalkboardTeacher,
 } from "react-icons/fa";
+import HeaderTitle from "./HeaderTitle";
 
 const Stats = () => {
   // Example stats
@@ -53,19 +54,21 @@ const Stats = () => {
   ];
 
   return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      className="w-11/12 mx-auto px-4 py-8"
-    >
-      <motion.h2
+    <motion.div initial="hidden" animate="visible" className="w-11/12 mx-auto">
+      {/* <motion.h2
         initial={{ opacity: 0, y: 1000 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2 }}
-        className="text-3xl font-bold text-center mb-8"
+        className="text-[48px] font-bold text-center pt-[120px] pb-[60px] bg-red-500"
       >
         Our Statistics
-      </motion.h2>
+      </motion.h2> */}
+      <HeaderTitle
+        title={"Our Statistics"}
+        description={
+          "We are proud to share the success of our eTutor platform!"
+        }
+      />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         {stats.map((stat) => (
           <motion.div
