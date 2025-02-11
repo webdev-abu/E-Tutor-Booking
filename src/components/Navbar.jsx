@@ -32,46 +32,50 @@ const Navbar = () => {
               : "text-black text-[16px] font-Heebo font-semibold"
           }
         >
-          Find tutors
+          All Tutors
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          to="/Add-Tutorials"
-          className={({ isActive }) =>
-            isActive
-              ? "text-primary text-[16px] font-Heebo font-semibold"
-              : "text-black text-[16px] font-Heebo font-semibold"
-          }
-        >
-          Add Tutorials
-        </NavLink>
-      </li>
+      {user && (
+        <>
+          <li>
+            <NavLink
+              to="/Add-Tutorials"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-primary text-[16px] font-Heebo font-semibold"
+                  : "text-black text-[16px] font-Heebo font-semibold"
+              }
+            >
+              Add Tutorials
+            </NavLink>
+          </li>
 
-      <li>
-        <NavLink
-          to="/my-tutorials"
-          className={({ isActive }) =>
-            isActive
-              ? "text-primary text-[16px] font-Heebo font-semibold"
-              : "text-black text-[16px] font-Heebo font-semibold"
-          }
-        >
-          My Tutorials
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/booked-tutors"
-          className={({ isActive }) =>
-            isActive
-              ? "text-primary text-[16px] font-Heebo font-semibold"
-              : "text-black text-[16px] font-Heebo font-semibold"
-          }
-        >
-          My booked tutors
-        </NavLink>
-      </li>
+          <li>
+            <NavLink
+              to="/my-tutorials"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-primary text-[16px] font-Heebo font-semibold"
+                  : "text-black text-[16px] font-Heebo font-semibold"
+              }
+            >
+              My Tutorials
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/booked-tutors"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-primary text-[16px] font-Heebo font-semibold"
+                  : "text-black text-[16px] font-Heebo font-semibold"
+              }
+            >
+              My booked tutors
+            </NavLink>
+          </li>
+        </>
+      )}
       <li>
         <NavLink
           to="/contact-us"
