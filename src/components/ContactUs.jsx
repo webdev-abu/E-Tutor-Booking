@@ -25,9 +25,9 @@ const ContactUs = () => {
       </Helmet>
       <div className="min-h-screen text-[#1e1e1e] bg-gradient-to-r from-blue-50 to-purple-100 ">
         <HeaderTitle
-          title={"Language Categories"}
+          title={"Contact Our Tutors"}
           description={
-            "Here are some Language Categories for your Online Tutor Booking Platform!"
+            "Have questions or need guidance? Connect with our expert tutors and get the support you need!"
           }
         />
         <div className="flex items-center justify-center py-10 ">
