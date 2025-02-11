@@ -44,36 +44,39 @@ const Banner = () => {
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
             <div
-              className="relative w-full h-full bg-cover bg-center flex items-center justify-center"
+              className="relative w-full h-full bg-cover bg-center"
               style={{ backgroundImage: `url(${slide.image})` }}
             >
-              <div className="absolute -inset-0  bg-black/40 "></div>
-              <div className="text-center text-white z-10 ">
-                <h2 className="text-primary uppercase mb-3 text-[28px] font-semibold font-Heebo">
-                  {slide.title}
-                </h2>
-                <p className="text-white uppercase mb-3 text-[48px] font-bold font-Rancho">
-                  {slide.description}
-                </p>
-                <div className="z-50">
-                  <Link
-                    to={slide.link}
-                    className="btn btn-primary py-md-3 px-md-5 me-3"
-                  >
-                    Read More
-                    <FaArrowRight />
-                  </Link>
-                  {user ? (
-                    ""
-                  ) : (
-                    <Link
-                      to="/login"
-                      className="btn btn-light py-md-3 px-md-5 cursor-pointer"
-                    >
-                      Join Now
-                      <FaArrowRight />
-                    </Link>
-                  )}
+              <div className="absolute -inset-0  bg-black/70 ">
+                <div className="h-full flex justify-center items-center">
+                  <div className="text-center text-white">
+                    <h2 className="text-primary uppercase mb-3 text-[28px] font-semibold font-Heebo">
+                      {slide.title}
+                    </h2>
+                    <p className="text-white uppercase mb-3 text-[48px] font-bold font-Rancho">
+                      {slide.description}
+                    </p>
+                    <div className="static z-[999]">
+                      <Link
+                        to={slide.link}
+                        className="btn btn-primary py-md-3 px-md-5 me-3"
+                      >
+                        Read More
+                        <FaArrowRight />
+                      </Link>
+                      {user ? (
+                        ""
+                      ) : (
+                        <Link
+                          to="/login"
+                          className="btn btn-light py-md-3 px-md-5 cursor-pointer"
+                        >
+                          Join Now
+                          <FaArrowRight />
+                        </Link>
+                      )}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
