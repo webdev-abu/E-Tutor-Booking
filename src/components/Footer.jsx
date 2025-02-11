@@ -20,7 +20,7 @@ const Footer = () => {
           <ul className="space-y-2">
             <li>
               <Link
-                to="/about"
+                to="/about-us"
                 className="hover:underline flex items-center gap-2"
               >
                 <span className="text-accent">&gt;</span> About Us

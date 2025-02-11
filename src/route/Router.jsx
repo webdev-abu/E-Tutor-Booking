@@ -14,6 +14,7 @@ import MyTutorials from "../pages/MyTutorials";
 import UpdateTutorial from "../pages/UpdateTutorial";
 import ContactUs from "../components/ContactUs";
 import AboutUs from "../components/AboutUs";
+import PrivacyPolicy from "../components/PrivacyPolicy";
 
 const router = createBrowserRouter([
   {
@@ -88,6 +89,10 @@ const router = createBrowserRouter([
       {
         path: "/contact-us",
         element: <ContactUs />,
+      },
+      {
+        path: "/privacy-policy",
+        element: <PrivacyPolicy />,
       },
     ],
   },
