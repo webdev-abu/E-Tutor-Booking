@@ -7,10 +7,11 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { FaStar } from "react-icons/fa";
 import axios from "axios";
 import HeaderTitle from "./HeaderTitle";
+import { filter } from "framer-motion/client";
 
 const PopularTutors = () => {
   const [tutors, setTutors] = useState([]);
-
+  console.log(tutors);
   useEffect(() => {
     fetchAllTutors();
   }, []);
@@ -52,7 +53,7 @@ const PopularTutors = () => {
       initial="hidden"
       animate="visible"
       transition={{ duration: 0.9 }}
-      className="w-11/12 mx-auto pb-16"
+      className="w-11/12 mx-auto"
     >
       {/* <h2 className="text-3xl font-bold text-center mb-8">
         Most Popular Courses
@@ -87,7 +88,7 @@ const PopularTutors = () => {
               whileHover={{ scale: 1.05 }}
               className="card bg-base-100 my-10 shadow-md hover:shadow-lg group transition-all duration-300"
             >
-              <Link to={`/tutors/${tutor.id}`}>
+              <Link to={`/tutor-details/${tutor._id}`}>
                 <div className="flex justify-between items-center px-5 py-5">
                   <div className="flex items-center justify-between gap-3">
                     <img

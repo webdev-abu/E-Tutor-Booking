@@ -32,8 +32,8 @@ const reviews = [
 
 const Reviews = () => {
   return (
-    <section className="pb-16 bg-gray-100">
-      <div className="container mx-auto">
+    <section className="pb-16">
+      <div className="w-11/12 mx-auto">
         {/* Section Title */}
 
         <HeaderTitle
