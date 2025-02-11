@@ -154,16 +154,16 @@ const Footer = () => {
             © E-Tutors, All Rights Reserved. Designed by Abu Tahir
           </p>
           <div className="flex gap-4 mt-2 md:mt-0">
-            <Link to="/home" className="hover:underline">
+            <Link to="/" className="hover:underline">
               Home
             </Link>
-            <Link to="/cookies" className="hover:underline">
+            <Link to="/" className="hover:underline">
               Cookies
             </Link>
-            <Link to="/help" className="hover:underline">
+            <Link to="/" className="hover:underline">
               Help
             </Link>
-            <Link to="/faqs" className="hover:underline">
+            <Link to="/" className="hover:underline">
               FAQs
             </Link>
           </div>

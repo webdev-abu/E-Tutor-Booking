@@ -49,7 +49,7 @@ const MyBookTutors = () => {
           <h1 className="text-3xl font-bold text-primary mb-6">
             Booked Tutors
           </h1>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 ">
             {tutors.map((tutor) => (
               <div
                 key={tutor._id}

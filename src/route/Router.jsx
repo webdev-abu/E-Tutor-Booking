@@ -15,6 +15,7 @@ import UpdateTutorial from "../pages/UpdateTutorial";
 import ContactUs from "../components/ContactUs";
 import AboutUs from "../components/AboutUs";
 import PrivacyPolicy from "../components/PrivacyPolicy";
+import Terms from "../components/Terms";
 
 const router = createBrowserRouter([
   {
@@ -93,6 +94,10 @@ const router = createBrowserRouter([
       {
         path: "/privacy-policy",
         element: <PrivacyPolicy />,
+      },
+      {
+        path: "/terms",
+        element: <Terms />,
       },
     ],
   },
