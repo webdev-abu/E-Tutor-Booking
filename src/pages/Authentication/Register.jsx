@@ -17,17 +17,16 @@ const Register = () => {
     const name = form.name.value;
     const photo = form.photo.value;
     const pass = form.password.value;
-    
+
     try {
       //2. User Registration
       const result = await createUser(email, pass);
-      
+
       await updateUserProfile(name, photo);
       setUser({ ...result.user, photoURL: photo, displayName: name });
       toast.success("Signup Successful");
       navigate("/");
     } catch (err) {
-     
       toast.error(err?.message);
     }
   };
@@ -40,7 +39,7 @@ const Register = () => {
       <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 text-black dark:text-white">
         <div className="card w-full max-w-md bg-base-100 shadow-xl p-6">
           <h2 className="text-2xl font-bold text-center text-primary mb-4">
-            Sign Up
+            Welcome to eTUTOR
           </h2>
           <form onSubmit={handleSignUp}>
             {/* Name Field */}
@@ -117,7 +116,7 @@ const Register = () => {
 
             {/* Submit Button */}
             <div className="form-control">
-              <button className="btn btn-primary w-full">Sign Up</button>
+              <button className="btn btn-primary w-full">Registration</button>
             </div>
           </form>
 

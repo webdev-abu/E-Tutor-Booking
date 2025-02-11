@@ -10,7 +10,7 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location?.state || "/";
-  
+
   const { signIn, signInWithGoogle } = useContext(AuthContext);
 
   // Email Password Signin
@@ -19,14 +19,13 @@ const Login = () => {
     const form = e.target;
     const email = form.email.value;
     const pass = form.password.value;
-    
+
     try {
       //User Login
       await signIn(email, pass);
       toast.success("Signin Successful");
       navigate(from, { replace: true });
     } catch (err) {
-     
       if (err.code === "Unauthorized") {
         toast.error("Invalid Email or Password");
       } else if (
@@ -51,7 +50,6 @@ const Login = () => {
       toast.success("Signin Successful");
       navigate(from, { replace: true });
     } catch (err) {
-      
       toast.error(err?.message);
     }
   };
@@ -63,7 +61,7 @@ const Login = () => {
       <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 text-black dark:text-white">
         <div className="card w-full max-w-md bg-base-100 shadow-xl p-6">
           <h2 className="text-2xl font-bold text-center text-primary mb-4">
-            Login
+            Welcome to eTUTOR
           </h2>
 
           <form onSubmit={handleSignIn}>
@@ -113,7 +111,7 @@ const Login = () => {
           <p className="text-sm text-center my-5 text-[#1e1e1e]">
             Don't have an account?{" "}
             <NavLink to="/registration" className="text-primary font-bold">
-              Sign Up
+              Registration
             </NavLink>
           </p>
 
