@@ -25,6 +25,18 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
+          to="/about-us"
+          className={({ isActive }) =>
+            isActive
+              ? "text-primary text-[16px] font-Heebo font-semibold"
+              : "text-black text-[16px] font-Heebo font-semibold"
+          }
+        >
+          About Us
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
           to="/find-tutors"
           className={({ isActive }) =>
             isActive

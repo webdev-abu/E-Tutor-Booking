@@ -213,7 +213,7 @@ const TutorList = () => {
           <Card key={tutor._id} tutor={tutor} />
         ))}
       </div>
-      <div className="flex justify-center items-center my-16">
+      <div className="flex justify-center items-center mt-16">
         <Link to={"/find-tutors"} className="btn btn-primary text-white">
           Show All Tutors
         </Link>

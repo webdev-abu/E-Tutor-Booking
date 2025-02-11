@@ -31,7 +31,7 @@ const AboutUs = () => {
 
       {/* Introduction Section */}
       <section className="py-16 bg-white">
-        <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div className="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -67,7 +67,7 @@ const AboutUs = () => {
 
       {/* Our Team Section */}
       <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-6">
+        <div className="w-11/12 mx-auto">
           <h2 className="text-3xl font-bold text-center mb-8">Meet Our Team</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {teamMembers.map((member) => (
@@ -93,7 +93,7 @@ const AboutUs = () => {
 
       {/* Vision & Mission Section */}
       <section className="py-16 bg-white">
-        <div className="container mx-auto px-6 text-center">
+        <div className="w-11/12 mx-auto text-center">
           <h2 className="text-3xl font-bold mb-8">Our Vision & Mission</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             <motion.div

@@ -6,6 +6,8 @@ import PopularTutors from "../components/PopularTutors";
 import ContactUs from "../components/ContactUs";
 import TutorList from "../components/TutorList";
 import { Helmet } from "react-helmet";
+import Newsletter from "../components/Newsletter";
+import Reviews from "../components/Reviews";
 
 const Home = () => {
   return (
@@ -30,8 +32,12 @@ const Home = () => {
         <section className="my-0">
           <PopularTutors />
         </section>
-        <section className="my-10">
-          <ContactUs />
+        <section className="my-0">
+          {/* <ContactUs /> */}
+          <Reviews />
+        </section>
+        <section className="my-0">
+          <Newsletter />
         </section>
       </div>
     </>

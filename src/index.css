@@ -15,3 +15,7 @@
   /* margin-top: 250px !important; */
   margin-left: 10px !important;
 }
+.swiper-pagination-bullets-most,
+.swiper-horizontal > .swiper-pagination-bullets {
+  bottom: var(--swiper-pagination-bottom, -2px) !important;
+}

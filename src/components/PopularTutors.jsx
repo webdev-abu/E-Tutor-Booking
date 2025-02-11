@@ -52,7 +52,7 @@ const PopularTutors = () => {
       initial="hidden"
       animate="visible"
       transition={{ duration: 0.9 }}
-      className="w-11/12 mx-auto py-8 "
+      className="w-11/12 mx-auto pb-16"
     >
       {/* <h2 className="text-3xl font-bold text-center mb-8">
         Most Popular Courses
@@ -78,7 +78,7 @@ const PopularTutors = () => {
           768: { slidesPerView: 3 },
           1024: { slidesPerView: 4 },
         }}
-        className="swiper-container"
+        className="swiper-container swiper-pagination-bullets-most"
       >
         {tutors.map((tutor) => (
           <SwiperSlide key={tutor._id}>
